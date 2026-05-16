@@ -56,7 +56,7 @@
     button { cursor: pointer; }
 
     /* Header */
-    header { text-align: center; background: #f5f5f5; padding: 80px 20px; background-image: url(IMG_2487.JPG);background-size: cover; }
+    header { text-align: center; background: rgba(0,0,0,0.8); padding: 80px 20px; background-image: url(florian-olivo-4hbJ-eymZ1o-unsplash.jpg);background-size: contain;background-repeat: no-repeat;border-radius: 20px; }
    
     header h1 { font-size: 3em; margin-bottom: 10px;text-shadow: 2px 2px 8px rgba(0,0,0,0.8);font-weight: 700;color: white; }
     header p { font-size: 1.2em; color: #ddd;display: inline-block;
@@ -65,32 +65,61 @@
   border-radius: 8px;
   color: white; }
 
+  #about{
+     max-width: 90%;
+    background: rgba(0,0,0,0.6);
+    border-radius: 20px;
+    text-align: justify;
+  }
+
+  #about p{
+    color: #e8e8e8;
+    letter-spacing: 1.2;
+  }
+
     /* Section Titles */
-    section h2 { text-align: center; margin-bottom: 40px; font-size: 2em; color: #2c3e50; }
+    section h2 { text-align: center; margin-bottom: 40px; font-size: 2em; color: #ddd; }
 
     /* Skills */
     .skills ul { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; }
-    
-    .skills li a { background: #3498db; color: white; padding: 10px 20px; border-radius: 5px; }
+    .skills li a{color:#e8e8e8;text-shadow: #333;}
+    .skills li  { background: #3498db; padding: 10px 20px; border-radius: 5px;transition: all 0.2s ease; }
     .skills li:hover {
-  background: #2980b9;
-  transform: scale(1.05);cursor: pointer;
+      
+  background: #2b2c2c;
+  transform: scale(1.1);cursor: pointer;
 }
+ .skills li:active {
+  transform: scale(0.96);
+ }
+
+ .content a:hover{
+  transform: scale(1.08);
+  text-decoration: underline;
+ 
+ }
 
     /* Projects */
     .projects { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
-    .project-card { border: 1px solid #ddd; border-radius: 8px; overflow: hidden; transition: transform 0.3s; }
+    .project-card { border: 1px solid #ddd; border-radius: 8px; overflow: hidden; transition: transform 0.3s;
+                    background: rgba(0,0,0,0.5);
+                    box-shadow: 0 -5px 16px rgba(255,255,255,0.96);
+                    backdrop-filter: blur(4px);
+                    -webkit-backdrop-filter: blur(4px); }
     .project-card:hover { transform: translateY(-5px); }
     .project-card img { width: 100%; height: 200px;aspect-ratio: 16 / 9;  object-fit: cover; }
     .project-card .content { padding: 10px; }
-    .project-card h3 { margin-bottom: 10px; }
-    .project-card p { font-size: 0.9em; color: #555; margin-bottom: 10px; }
+    .project-card h3 { margin-bottom: 10px;font-weight: bold; color: #ddd;text-shadow:  0 -2px 5px rgba(0,0,0,0.2); }
+    .project-card p { font-size: 0.9em; color: #e8e8e8; margin-bottom: 10px;text-shadow: rgba(0,0,0,0.2); }
     .project-card a { font-weight: bold; }
 
     /* Contact */
-    .contact { text-align: center; }
-    .contact a { display: inline-block; margin: 5px 10px; padding: 10px 20px; border: 1px solid #3498db; border-radius: 5px; }
-
+    .contact { text-align: center;background: rgba(0,0,0,0.8);border-radius: 20px;max-width: 600px;}
+    .contact a { display: inline-block; margin: 5px 10px; padding: 10px 20px; border: 1px solid #3498db; border-radius: 5px;transition: all 0.2s ease; }
+      .contact a:hover{
+        transform: translateY(-5px);
+        background: #333;
+      }
     /* Responsive */
     @media(max-width: 600px){
       header h1 { font-size: 2.2em; }
@@ -108,6 +137,10 @@
     <h1>Rice Kusnadi</h1>
     <p>Full-Stack Web Developer | Front-end & Back-end Developer</p>
   </header>
+  <div class="background" style="position: fixed;inset: 0;z-index: -1;overflow: hidden;">
+    <img src="geralt-program-942487_1920.jpg" style="width: 100%;height: 100%;object-fit: cover;filter: brightness(0.4);" alt="bacground" loading="lazy"/>
+  </div>
+
 
   <!-- ABOUT -->
   <section id="about">
@@ -134,7 +167,7 @@
     <h2>Proyek</h2>
     <div class="projects">
       <div class="project-card">
-        <img src="Cuplikan layar 2026-04-06 104126.png" alt="E-Commerce App">
+        <img src="Cuplikan layar 2026-04-06 104126.png" alt="E-Commerce App" loading="lazy">
         <div class="content">
           <h3>E-Commerce Web App</h3>
           <p>Aplikasi toko online dengan fitur, keranjang belanja, checkout, dashboard Produk dan dashboard admin sedang saya kembangkan.</p>
@@ -143,7 +176,7 @@
         </div>
       </div>
       <div class="project-card">
-        <img src="1000014354.jpg" alt="resize & compress foto">
+        <img src="1000014354.jpg" alt="resize & compress foto" loading="lazy">
         <div class="content">
           <h3>Resize & Compress Foto Online Gratis</h3>
           <p>App Rubah Ukuran file Foto.</p>
@@ -152,12 +185,21 @@
         </div>
       </div>
       <div class="project-card">
-        <img src="https://via.placeholder.com/400x150" alt="Task Management App">
+        <img src="makcek_ngobrol.png" alt="Task Management App" loading="lazy">
         <div class="content">
-          <h3>Task Management App</h3>
-          <p>Aplikasi manajemen tugas tim dengan fitur kolaborasi real-time dan reminder.</p>
-          <a href="https://github.com/makcex/makcex.github.io" target="_blank">GitHub</a> | 
-          <a href="https://makcexgithubio-production.up.railway.app/" target="_blank">Live Demo</a>
+          <h3>Fb Clone App</h3>
+          <p>Aplikasi Berbalas Commentar.</p>
+          <a href="https://makcek-ngobrol.web.app/" target="_blank">GitHub</a> | 
+          <a href="https://github.com/makcex/makcek-ngobrol" target="_blank">Live Demo</a>
+        </div>
+      </div>
+      <div class="project-card">
+        <img src="android-chrome-512x512.png" alt="Task Management App" loading="lazy">
+        <div class="content">
+          <h3>App Chat realtime</h3>
+          <p>Aplikasi Kirim Pesan dan AudioCall</p>
+          <a href="https://makcek-ngobrol.web.app/" target="_blank">GitHub</a> | 
+          <a href="https://github.com/makcex/makcek-ngobrol" target="_blank">Live Demo</a>
         </div>
       </div>
     </div>
@@ -166,7 +208,7 @@
   <!-- CONTACT -->
   <section id="contact" class="contact">
     <h2>Kontak</h2>
-    <p>Email: <a href="mailto:uzigame297@gmail.com">My Email</a></p>
+    <a href="mailto:uzigame297@gmail.com" target="_blank">My Email</a>
     <a href="https://www.linkedin.com/in/rice-rice-kusnadi-763076230/" target="_blank">LinkedIn</a>
     <a href="https://github.com/makcex/" target="_blank">GitHub</a>
     <a href="https://github.com/makcex/my-portfolio" target="_blank">Portfolio</a>
@@ -226,6 +268,18 @@
       }, 150);
     });
   });
+
+  const skill=document.querySelectorAll(".skills")
+  skills.forEach(skill => {
+    skill.addEventListener('touchStart',function() {
+      skill.style.transform='scale(1.05)';
+      skill.style.boxShadow='0 10px 20px rgba(0,0,0,0.2)';
+    })
+    skill.addEventListener('touchEnd',function() {
+      skill.style.transform='scale(1)';
+      skill.style.boxShadow='none';
+    })
+  })
 </script>
 
 
